@@ -54,9 +54,9 @@ namespace TraversalCoreProje
 
             services.AddAutoMapper(typeof(Startup));
             //burada kaldýk
-            services.AddTransient<IValidator<AnnouncementAddDTOs>, AnnouncementValidator>();
+            // services.AddTransient<IValidator<AnnouncementAddDto>, AnnouncementValidator>();
 
-
+            services.CustomerValidator();
 
             services.AddControllersWithViews().AddFluentValidation();
 
