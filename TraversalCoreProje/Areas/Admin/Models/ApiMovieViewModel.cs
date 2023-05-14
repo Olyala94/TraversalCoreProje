@@ -13,5 +13,7 @@ namespace TraversalCoreProje.Areas.Admin.Models
         public int year { get; set; }
 
         public string trailer { get; set; }
+
+       // public string image { get; set; }   
     }
 }
