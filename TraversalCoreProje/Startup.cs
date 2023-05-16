@@ -41,6 +41,12 @@ namespace TraversalCoreProje
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<GetAllDestinationQueryHandler>();
+            services.AddScoped<GetDestinationByIDQueryHandler>();
+            services.AddScoped<CreateDestinationCommandHandler>();
+            services.AddScoped<RemoveDestinationCommandHandler>();
+            services.AddScoped<UpdateDestinationCommandHandler>();
+
+            
 
             services.AddLogging(x=> 
             {
@@ -97,7 +103,18 @@ namespace TraversalCoreProje
             app.UseAuthentication();
             app.UseRouting();
 
-            app.UseAuthorization(); 
+            app.UseAuthorization();
+
+            var suppertedCultures = new[] { "en", "fr", "es", "gr", "tr", "de" };
+            var localizationOptions = new RequestLocalizationOptions().SetDefaultCulture(suppertedCultures[1]).AddSupportedCultures(suppertedCultures).AddSupportedUICultures(suppertedCultures);
+            app.UseRequestLocalization(localizationOptions);
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Default}/{action=Index}/{id?}");
+            });
 
             app.UseEndpoints(endpoints =>
             {
@@ -105,13 +122,6 @@ namespace TraversalCoreProje
                   name: "areas",
                   pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
                 );
-            });
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Login}/{action=SignIn}/{id?}");
             });
         }
     }

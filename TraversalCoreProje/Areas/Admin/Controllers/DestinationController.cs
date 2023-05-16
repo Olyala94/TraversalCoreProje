@@ -2,12 +2,13 @@
 using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace TraversalCoreProje.Areas.Admin.Controllers
 {
     [Area("Admin")]
-
+    [AllowAnonymous]
     public class DestinationController : Controller
     {
       private readonly IDestinationService _destinationService;
