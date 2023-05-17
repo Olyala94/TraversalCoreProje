@@ -1,4 +1,4 @@
-﻿namespace TraversalCoreProje.CQRS.Result.DestinationResults
+﻿namespace TraversalCoreProje.CQRS.Queries.DestinationQueries
 {
     public class GetDestinationByIDQuery
     {

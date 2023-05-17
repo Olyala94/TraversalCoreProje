@@ -69,6 +69,6 @@ namespace TraversalCoreProje.Areas.Admin.Controllers
             return RedirectToAction("Index");   
         }
 
-
+       
     }
 }

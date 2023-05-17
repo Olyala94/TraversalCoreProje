@@ -9,6 +9,7 @@ using DTOLayer.DTOs.AnnouncementDTOs;
 using EntityLayer.Concrete;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -46,9 +47,14 @@ namespace TraversalCoreProje
             services.AddScoped<RemoveDestinationCommandHandler>();
             services.AddScoped<UpdateDestinationCommandHandler>();
 
-            
+            services.AddMediatR(typeof(Startup)); //typeof(startup) dediðimiz kýsýmda startup dosyasýyla ayný namespacede olan dosyalar için verdiðimiz dependency injection çalýþsýn demek istiyoruz. .Net6 için typeof(Program) diyoruz.
 
-            services.AddLogging(x=> 
+             //typeof:                                    
+            //typeof bir JavaScript operatörüdür. Bu operatör, belirli bir deðerin veri türünü döndürmek için kullanýlýr. JavaScript'te typeof operatörü genellikle deðiþkenlerin veya deðerlerin veri türünü kontrol etmek veya karþýlaþtýrmak için kullanýlýr.
+           // typeof operatörü, bir argüman olarak alýnan deðerin veri türünü bir dize olarak döndürür.
+
+
+                        services.AddLogging(x=> 
             {
                 x.ClearProviders();
                 x.SetMinimumLevel(LogLevel.Debug);  
