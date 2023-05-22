@@ -20,11 +20,12 @@ namespace TraversalCoreProje.Controllers
         }
 
         [HttpGet]   
-        public async Task<PartialViewResult> AddComment(int id)
+        public PartialViewResult AddComment()
         {
-            ViewBag.destID = id; 
-            var values = await _userManager.FindByNameAsync(User.Identity.Name);
-            ViewBag.userID = values.Id;    
+           // ViewBag.destID = id; 
+            //var values = await _userManager.FindByNameAsync(User.Identity.Name);
+            //ViewBag.userID = values.Id;
+         
             return PartialView();
         }
 
