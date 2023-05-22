@@ -1,8 +1,10 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Threading.Tasks;
 
 namespace TraversalCoreProje.Controllers
 {
@@ -10,9 +12,19 @@ namespace TraversalCoreProje.Controllers
     {
         CommentManager commentManager = new CommentManager(new EfCommentDal());
 
-        [HttpGet]   
-        public PartialViewResult AddComment()
+        private readonly UserManager<AppUser> _userManager;
+
+        public CommentController(UserManager<AppUser> userManager)
         {
+            _userManager = userManager;
+        }
+
+        [HttpGet]   
+        public async Task<PartialViewResult> AddComment(int id)
+        {
+            ViewBag.destID = id; 
+            var values = await _userManager.FindByNameAsync(User.Identity.Name);
+            ViewBag.userID = values.Id;    
             return PartialView();
         }
 
@@ -23,13 +35,6 @@ namespace TraversalCoreProje.Controllers
             p.CommentState = true;
             commentManager.TAdd(p);
             return RedirectToAction("Index","Destination");   
-        }
-
-        [HttpGet]
-        public PartialViewResult AddComment(int id)
-        {
-            ViewBag.i = id;
-            return PartialView();
         }
     }
 }

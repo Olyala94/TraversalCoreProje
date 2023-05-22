@@ -3,23 +3,14 @@
     <p class="mb-4">
         İşaretli alanları doldurmanız gerekmektedir.
     </p>
+@*    <h3>Destination ID: @ViewBag.destID</h3>*@
     <form method="post" asp-action="AddComment" asp-controller="Comment">
-
+        <input type="hidden" name="DestinationID" value="@ViewBag.destID" />
+        <h2>Kullanıcı ID: @ViewBag.userID</h2>
         <div class="form-group">
             <textarea name="CommentContent" class="form-control" placeholder="Yorumunuz*" required=""
                       spellcheck="false"></textarea>
         </div>
-        <div class="input-grids row">
-
-            <div class="form-group col-lg-6">
-                <input type="text" name="CommentUser" class="form-control" placeholder="Adınız Soyadınız*"
-                       required="">
-            </div>
-            <div class="form-group col-lg-6">
-                <input type="text" name="DestinationID"  hidden class="form-control" placeholder="Destination ID*" required="" value="@ViewBag.i">
-            </div>
-        </div>
-
         <div class="submit text-right">
             <button class="btn btn-style btn-primary"> Yorum Yap </button>
         </div>

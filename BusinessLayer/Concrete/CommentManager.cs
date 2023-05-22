@@ -48,9 +48,14 @@ namespace BusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
-        public List<Comment> GetListCommentsWithDestination()
+        public List<Comment> TGetListCommentsWithDestination()
         {
-           return _commentDal.GetListCommentsWithDestination(); 
+            return _commentDal.GetListCommentsWithDestination();
+        }
+
+        public List<Comment> TGetListCommentsWithDestinationAndUser(int id)
+        {
+            return _commentDal.GetListCommentsWithDestinationAndUser(id); 
         }
     }
 }

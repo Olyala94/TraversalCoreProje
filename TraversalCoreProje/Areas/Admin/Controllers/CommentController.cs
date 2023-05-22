@@ -18,7 +18,7 @@ namespace TraversalCoreProje.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
-            var values = _commentService.GetListCommentsWithDestination();
+            var values = _commentService.TGetListCommentsWithDestination();
             return View(values);
         }
 

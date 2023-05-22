@@ -23,5 +23,9 @@ namespace EntityLayer.Concrete
         public int DestinationID { get; set; }
 
         public Destination Destination { get; set; }
+
+        public int AppUserID { get; set; }
+
+        public AppUser AppUser { get; set; }
     }
 }
