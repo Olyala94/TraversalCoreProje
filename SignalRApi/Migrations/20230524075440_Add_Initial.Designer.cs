@@ -10,7 +10,7 @@ using SignalRApi.DAL;
 namespace SignalRApi.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20230523045845_Add_Initial")]
+    [Migration("20230524075440_Add_Initial")]
     partial class Add_Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
