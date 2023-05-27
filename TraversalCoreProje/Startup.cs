@@ -83,7 +83,12 @@ namespace TraversalCoreProje
                 .Build();
                 config.Filters.Add(new AuthorizeFilter(policy));
             });
-            services.AddMvc();  
+            services.AddMvc();
+//Eðer bir kullanýcý Authenticate olmadan giriþ yapmýþsa buraya yönlendir  anlamý taþýyor!!!!!
+            services.ConfigureApplicationCookie(options => 
+            {
+                options.LoginPath = "/Login/SignIn/";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

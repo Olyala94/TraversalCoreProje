@@ -1,11 +1,6 @@
-﻿@{
-    ViewData["Title"] = "Index3";
-}
-
-<h1>Index2</h1>
-
+﻿
 @section Scripts
-    {
+{
 
     <script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -15,9 +10,9 @@
 
             var visitChartList = new Array();
 
-            visitChartList.push(["Tarih","Edirne", "Istanbul", "Ankara", "Antalya", "Bursa"])
+            visitChartList.push(["Tarih", "İstanbul", "Ankara", "İzmir", "Konya", "Antalya"])
 
-            var connection = new signalR.HubConnectionBuilder().withUrl("http://localhost:63558/VisitorHub").build();
+            var connection = new signalR.HubConnectionBuilder().withUrl("http://localhost:35517/VisitorHub").build();
 
             $("#connectionStatus").text(connection.connectionState);
 
@@ -27,7 +22,7 @@
             }).catch((err) => { console.log(err) });
 
 
-            connection.on("CallVisitList", (visitList) => {
+            connection.on("ReceiveVisitorList", (visitList) => {
 
                 visitChartList = visitChartList.splice(0, 1);
 
@@ -46,7 +41,7 @@
                 var data = google.visualization.arrayToDataTable(visitChartList);
 
                 var options = {
-                    title: 'Traversal Ziyaretçi Listesi Grafiği',
+                    title: 'Başlık',
                     curveType: 'none',
                     legend: { position: 'bottom' }
                 };

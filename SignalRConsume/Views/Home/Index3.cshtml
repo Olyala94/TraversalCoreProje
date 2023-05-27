@@ -1,8 +1,9 @@
-﻿@{
+﻿
+@{
     ViewData["Title"] = "Index3";
 }
 
-<h1>Index2</h1>
+<h1>Index3</h1>
 
 @section Scripts
     {
@@ -15,9 +16,9 @@
 
             var visitChartList = new Array();
 
-            visitChartList.push(["Tarih","Edirne", "Istanbul", "Ankara", "Antalya", "Bursa"])
+            visitChartList.push(["Tarih","Edirne","Istanbul", "Ankara", "Antalya","Bursa"])
 
-            var connection = new signalR.HubConnectionBuilder().withUrl("http://localhost:63558/VisitorHub").build();
+            var connection = new signalR.HubConnectionBuilder().withUrl("http://localhost:6113/VisitorHub").build();
 
             $("#connectionStatus").text(connection.connectionState);
 
@@ -27,7 +28,7 @@
             }).catch((err) => { console.log(err) });
 
 
-            connection.on("CallVisitList", (visitList) => {
+            connection.on("ReceiveVisitorList", (visitList) => {
 
                 visitChartList = visitChartList.splice(0, 1);
 
