@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -54,7 +55,7 @@ namespace TraversalCoreProje
            // typeof operatörü, bir argüman olarak alýnan deðerin veri türünü bir dize olarak döndürür.
 
 
-                        services.AddLogging(x=> 
+            services.AddLogging(x=> 
             {
                 x.ClearProviders();
                 x.SetMinimumLevel(LogLevel.Debug);  
@@ -83,8 +84,18 @@ namespace TraversalCoreProje
                 .Build();
                 config.Filters.Add(new AuthorizeFilter(policy));
             });
-            services.AddMvc();
-//Eðer bir kullanýcý Authenticate olmadan giriþ yapmýþsa buraya yönlendir  anlamý taþýyor!!!!!
+
+
+            //Dilleri Resources üzerinde arýyacak !!!
+            services.AddLocalization(opt =>
+            {
+                opt.ResourcesPath = "Resources";
+            });
+			
+            //Languages
+			services.AddMvc().AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix).AddDataAnnotationsLocalization();
+
+            //Eðer bir kullanýcý Authenticate olmadan giriþ yapmýþsa buraya yönlendir  anlamý taþýyor!!!!!
             services.ConfigureApplicationCookie(options => 
             {
                 options.LoginPath = "/Login/SignIn/";
@@ -116,11 +127,16 @@ namespace TraversalCoreProje
 
             app.UseAuthorization();
 
-            var suppertedCultures = new[] { "en", "fr", "es", "gr", "tr", "de" };
-            var localizationOptions = new RequestLocalizationOptions().SetDefaultCulture(suppertedCultures[1]).AddSupportedCultures(suppertedCultures).AddSupportedUICultures(suppertedCultures);
-            app.UseRequestLocalization(localizationOptions);
+            //önemli burada dili çaðrýlmasý Buradaki kodlar!!! esses olay burada
+            var supportedCultures = new[] { "en", "fr", "es", "el", "tr", "de", "ru","tk" };
+            var localizationOptions = new RequestLocalizationOptions().SetDefaultCulture(supportedCultures[1]).AddSupportedCultures(supportedCultures).AddSupportedUICultures(supportedCultures);
+			app.UseRequestLocalization(localizationOptions);
 
-            app.UseEndpoints(endpoints =>
+			//var suppertedCultures = new[] { "en", "fr", "es", "gr", "tr", "de" };
+			//var localizationOptions = new RequestLocalizationOptions().SetDefaultCulture(suppertedCultures[1]).AddSupportedCultures(suppertedCultures).AddSupportedUICultures(suppertedCultures);
+			//app.UseRequestLocalization(localizationOptions);
+
+			app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
