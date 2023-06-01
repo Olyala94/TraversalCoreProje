@@ -117,25 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Bize" xml:space="preserve">
-    <value>Σε εμάς</value>
+  <data name="Aktif Rezv." xml:space="preserve">
+    <value>Aktif Rezv.</value>
   </data>
-  <data name="Bügün" xml:space="preserve">
-    <value>Σήμερα</value>
+  <data name="Geçmiş Rezv." xml:space="preserve">
+    <value>Geçmiş Rezv.</value>
   </data>
-  <data name="Güzel" xml:space="preserve">
-    <value>Πανεμορφη</value>
+  <data name="Onay Bekleyen Rezv." xml:space="preserve">
+    <value>Onay Bekleyen Rezv.</value>
   </data>
-  <data name="Hava" xml:space="preserve">
-    <value>Καιρός</value>
+  <data name="Profilim" xml:space="preserve">
+    <value>Profilim</value>
   </data>
-  <data name="Merhaba" xml:space="preserve">
-    <value>Γειά σου</value>
+  <data name="Siteye Git" xml:space="preserve">
+    <value>Siteye Git</value>
   </data>
-  <data name="Ulaşın" xml:space="preserve">
-    <value>Επικοινωνία</value>
+  <data name="Son Rotalar" xml:space="preserve">
+    <value>Son Rotalar</value>
   </data>
-  <data name="Çok" xml:space="preserve">
-    <value>Πολύ</value>
+  <data name="Tur Rotaları" xml:space="preserve">
+    <value>Tur Rotaları</value>
+  </data>
+  <data name="Yeni Rezervasyon" xml:space="preserve">
+    <value>Yeni Rezervasyon</value>
+  </data>
+  <data name="Yorumlarım" xml:space="preserve">
+    <value>Yorumularım</value>
+  </data>
+  <data name="Çıkış Yap" xml:space="preserve">
+    <value>Çıkış Yap</value>
   </data>
 </root>

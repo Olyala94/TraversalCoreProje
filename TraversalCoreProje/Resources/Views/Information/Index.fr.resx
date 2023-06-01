@@ -117,7 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Bize" xml:space="preserve">
+    <value>À nous</value>
+  </data>
+  <data name="Bügün" xml:space="preserve">
+    <value>Aujourd'hui</value>
+  </data>
+  <data name="Güzel" xml:space="preserve">
+    <value>Beau</value>
+  </data>
+  <data name="Hava" xml:space="preserve">
+    <value>Temps</value>
+  </data>
   <data name="Merhaba" xml:space="preserve">
     <value>Bonjour</value>
+  </data>
+  <data name="Ulaşın" xml:space="preserve">
+    <value>contact</value>
+  </data>
+  <data name="Çok" xml:space="preserve">
+    <value>Beaucoup</value>
   </data>
 </root>
