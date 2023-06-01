@@ -118,33 +118,33 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Aktif Rezv." xml:space="preserve">
-    <value>Active Réserve </value>
+    <value>Işjeň Bellikler</value>
   </data>
   <data name="Geçmiş Rezv." xml:space="preserve">
-    <value>Past Réserve </value>
+    <value>Öňki Bellikler</value>
   </data>
   <data name="Onay Bekleyen Rezv." xml:space="preserve">
-    <value>Approbation Rés.</value>
+    <value>Tassyklama Garaş.</value>
   </data>
   <data name="Profilim" xml:space="preserve">
-    <value>Mon Profil</value>
+    <value>Meniň Profilim</value>
   </data>
   <data name="Siteye Git" xml:space="preserve">
-    <value>Page D'accueil</value>
+    <value>Sahypa Giriň</value>
   </data>
   <data name="Son Rotalar" xml:space="preserve">
-    <value>Derniers itinéraires</value>
+    <value>Soňky Ugurlar</value>
   </data>
   <data name="Tur Rotaları" xml:space="preserve">
-    <value>Itinéraire dela visite</value>
+    <value>Gezelenç Ugurlary</value>
   </data>
   <data name="Yeni Rezervasyon" xml:space="preserve">
-    <value>Nouvelle Rés</value>
+    <value>Täze Bellik</value>
   </data>
   <data name="Yorumlarım" xml:space="preserve">
-    <value>Mes Comment. </value>
+    <value>Meniň Teswirlerim</value>
   </data>
   <data name="Çıkış Yap" xml:space="preserve">
-    <value>Se Déconnecter</value>
+    <value>Hasapdan Çykmak</value>
   </data>
 </root>

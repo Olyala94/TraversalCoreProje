@@ -118,33 +118,36 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Aktif Rezv." xml:space="preserve">
-    <value>Active Réserve </value>
+    <value>Активные брон.</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Панель приборов</value>
   </data>
   <data name="Geçmiş Rezv." xml:space="preserve">
-    <value>Past Réserve </value>
+    <value>Прошлые брон.</value>
   </data>
   <data name="Onay Bekleyen Rezv." xml:space="preserve">
-    <value>Approbation Rés.</value>
+    <value>Oжидающие брон.</value>
   </data>
   <data name="Profilim" xml:space="preserve">
-    <value>Mon Profil</value>
+    <value>Мой профиль</value>
   </data>
   <data name="Siteye Git" xml:space="preserve">
-    <value>Page D'accueil</value>
+    <value>Перейти на сайт</value>
   </data>
   <data name="Son Rotalar" xml:space="preserve">
-    <value>Derniers itinéraires</value>
+    <value>Последние марш.</value>
   </data>
   <data name="Tur Rotaları" xml:space="preserve">
-    <value>Itinéraire dela visite</value>
+    <value>Маршруты туров</value>
   </data>
   <data name="Yeni Rezervasyon" xml:space="preserve">
-    <value>Nouvelle Rés</value>
+    <value>Новое брон.</value>
   </data>
   <data name="Yorumlarım" xml:space="preserve">
-    <value>Mes Comment. </value>
+    <value>Мои отзывы</value>
   </data>
   <data name="Çıkış Yap" xml:space="preserve">
-    <value>Se Déconnecter</value>
+    <value>Выйти</value>
   </data>
 </root>

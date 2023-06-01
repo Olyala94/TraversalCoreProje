@@ -1,18 +1,90 @@
-﻿<ul class="nav navbar-nav float-right">
+﻿@*<ul class="nav navbar-nav float-right">
     <li class="dropdown dropdown-language nav-item">
         <a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="flag-icon flag-icon-us"></i>
+            <i class="flag-icon flag-icon-tr"></i>
             <span class="selected-language"></span></a>
         <div class="dropdown-menu" aria-labelledby="dropdown-flag">
             <div class="arrow_box">
                 <a class="dropdown-item" href="/Member/Destination/Index/?culture=en"><i class="flag-icon flag-icon-us"></i> English</a>
-                <a class="dropdown-item" href="/Member/Destination/Index/?culture=fr"><i class="flag-icon flag-icon-cn"></i> Chinese</a>
-                <a class="dropdown-item" href="/Member/Destination/Index/?culture=en"><i class="flag-icon flag-icon-ru"></i> Russian</a>
+                <a class="dropdown-item" href="/Member/Destination/Index/?culture=cn"><i class="flag-icon flag-icon-cn"></i> Chinese</a>
+                <a class="dropdown-item" href="/Member/Destination/Index/?culture=ru"><i class="flag-icon flag-icon-ru"></i> Russian</a>
                 <a class="dropdown-item" href="/Member/Destination/Index/?culture=fr"><i class="flag-icon flag-icon-fr"></i> French</a>
-                <a class="dropdown-item" href="/Member/Destination/Index/?culture=en"><i class="flag-icon flag-icon-es"></i> Spanish</a>
+                <a class="dropdown-item" href="/Member/Destination/Index/?culture=es"><i class="flag-icon flag-icon-es"></i> Spanish</a>
                 <a class="dropdown-item" href="/Member/Destination/Index/?culture=tr"><i class="flag-icon flag-icon-tr"></i> Turkish</a>
                 <a class="dropdown-item" href="/Member/Destination/Index/?culture=tk"><i class="flag-icon flag-icon-tm"></i> Turkmen</a>
             </div>
         </div>
     </li>
 </ul>
+
+<script>
+    // Dil seçeneklerine tıklama işlemini dinlemek için JavaScript kodu
+    var dropdownItems = document.querySelectorAll(".dropdown-item");
+    dropdownItems.forEach(function (item) {
+        item.addEventListener("click", function (event) {
+            event.preventDefault();
+            var flagIcon = this.querySelector(".flag-icon");
+            var selectedLanguage = document.querySelector(".selected-language");
+            var dropdownToggle = document.querySelector(".dropdown-toggle");
+
+            // Seçilen bayrağı görsel olarak göstermek için
+            dropdownToggle.innerHTML = flagIcon.outerHTML;
+
+            // Seçilen dilin adını göstermek için
+            selectedLanguage.textContent = this.textContent;
+
+            // Dil seçeneğine tıklandığında ilgili sayfaya yönlendirme
+            var url = this.getAttribute("href");
+            window.location.href = url;
+        });
+    });
+</script>*@
+
+<ul class="nav navbar-nav float-right">
+    <li class="dropdown dropdown-language nav-item">
+        <a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="flag-icon flag-icon-us"></i>
+            <span class="selected-language"></span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdown-flag">
+            <div class="arrow_box">
+                <a class="dropdown-item" href="#" data-lang="en"><i class="flag-icon flag-icon-us"></i> English</a>
+                <a class="dropdown-item" href="#" data-lang="cn"><i class="flag-icon flag-icon-cn"></i> Chinese</a>
+                <a class="dropdown-item" href="#" data-lang="ru"><i class="flag-icon flag-icon-ru"></i> Russian</a>
+                <a class="dropdown-item" href="#" data-lang="fr"><i class="flag-icon flag-icon-fr"></i> French</a>
+                <a class="dropdown-item" href="#" data-lang="es"><i class="flag-icon flag-icon-es"></i> Spanish</a>
+                <a class="dropdown-item" href="#" data-lang="tr"><i class="flag-icon flag-icon-tr"></i> Turkish</a>
+                <a class="dropdown-item" href="#" data-lang="tk"><i class="flag-icon flag-icon-tm"></i> Turkmen</a>
+            </div>
+        </div>
+    </li>
+</ul>
+
+<script>
+    // Dil seçeneklerine tıklama işlemini dinlemek için JavaScript kodu
+    var dropdownItems = document.querySelectorAll(".dropdown-item");
+    var dropdownToggle = document.querySelector("#dropdown-flag");
+    var selectedFlag = dropdownToggle.querySelector(".flag-icon");
+    var selectedLanguage = dropdownToggle.querySelector(".selected-language");
+
+    dropdownItems.forEach(function (item) {
+        item.addEventListener("click", function (event) {
+            event.preventDefault();
+            var flagIcon = this.querySelector(".flag-icon");
+
+            // Seçilen bayrağı görsel olarak göstermek için
+            selectedFlag.className = flagIcon.className;
+
+            // Seçilen dilin adını göstermek için
+            selectedLanguage.textContent = this.textContent;
+
+            // Seçilen dilin data-lang değerini almak için
+            var lang = this.getAttribute("data-lang");
+
+            // Dil seçeneğine tıklandığında ilgili sayfaya yönlendirme
+            var url = "/Member/Destination/Index/?culture=" + lang;
+            window.location.href = url;
+        });
+    });
+</script>
+

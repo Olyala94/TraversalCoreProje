@@ -47,4 +47,10 @@
     <None Include="wwwroot\sneat-1.0.0\.github\workflows\issue-staler.yml" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Views\Shared\_MemberLayout.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>
