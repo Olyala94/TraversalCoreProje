@@ -14,9 +14,13 @@ namespace DataAccessLayer.Concrete
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("server=DESKTOP-9E5P6SH;database=TraversalDB;integrated security=true;");
-
-            base.OnConfiguring(optionsBuilder);
         }
+
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    //IP Adresi Olaca//Host- Ana Bilgisayar bilğisi//databaseName:traversaldb//integrated security=true : KAldırılacak, Çünkü bizim artık kullanıcı adı ve şifremiz olacak o bilğiler ile bağlanacağız --> //user = admin. ; password = 6H0&2w2fk;"
+        //    optionsBuilder.UseSqlServer("server=77.245.159.10\\MSSQLSERVER2019;database=traversaldb;");
+        //}
 
         public DbSet<About> Abouts { get; set; }
 
